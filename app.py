@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 # DATA LOADING
 
+
 df = pd.read_csv("C:\\Users\\pc\\Desktop\\python, sir zfar iqbal\\simple_linearRegression\\dropout22_clean.csv")
 
 print("Data loaded successfully")
