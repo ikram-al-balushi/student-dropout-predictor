@@ -1,0 +1,226 @@
+/* =====================================================
+   Muhammad Ikram — Student Dropout Predictor
+   Brand: Black #0a0a0a | Yellow #FFD400 | White
+   ===================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0a0a0a;
+  --card: #161616;
+  --border: #2c2c2c;
+  --yellow: #FFD400;
+  --white: #ffffff;
+  --grey: #a8a8a8;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+header {
+  padding: 48px 24px 28px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.1;
+}
+
+.yellow { color: var(--yellow); }
+
+.sub {
+  color: var(--grey);
+  margin-top: 12px;
+  font-size: 17px;
+  max-width: 560px;
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  main { grid-template-columns: 1fr; }
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.card h2 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 24px;
+}
+
+/* ---------- Fields ---------- */
+.field { margin-bottom: 22px; }
+
+label {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hint { color: var(--grey); font-weight: normal; font-size: 13px; }
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+input[type="range"] {
+  flex: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: #2c2c2c;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--yellow);
+  cursor: pointer;
+  border: 3px solid var(--black);
+}
+
+input[type="range"]:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--white);
+}
+
+.value {
+  font-family: "Courier New", monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--yellow);
+  min-width: 52px;
+  text-align: right;
+}
+
+/* ---------- Button ---------- */
+button {
+  width: 100%;
+  background: var(--yellow);
+  color: var(--black);
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: transform 0.1s ease;
+}
+
+button:hover { transform: translateY(-2px); }
+button:focus-visible { outline: 3px solid var(--white); }
+
+/* ---------- Result ---------- */
+.hidden { display: none; }
+
+.risk-number {
+  font-family: "Courier New", monospace;
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.outof { font-size: 26px; color: var(--grey); }
+
+/* Signature element: the risk gauge */
+.gauge {
+  height: 18px;
+  background: #2c2c2c;
+  border-radius: 9px;
+  margin: 22px 0;
+  overflow: hidden;
+}
+
+.gauge-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--yellow);
+  border-radius: 9px;
+  transition: width 0.8s ease;
+}
+
+.level {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--yellow);
+  margin-bottom: 10px;
+}
+
+.action {
+  color: var(--grey);
+  font-size: 16px;
+  line-height: 1.5;
+  border-left: 4px solid var(--yellow);
+  padding-left: 14px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding: 20px 24px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.name { font-weight: bold; }
+.tagline { color: var(--yellow); font-size: 14px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gauge-fill, button { transition: none; }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dropout Predictor — Muhammad Ikram</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="tag">MACHINE LEARNING &middot; MULTIPLE LINEAR REGRESSION</div>
+    <h1>Student Dropout <span class="yellow">Predictor</span></h1>
+    <p class="sub">A student never leaves school for just one reason. Enter the four signals — get an early warning.</p>
+  </header>
+
+  <main>
+
+    <!-- ===== INPUT FORM (school register style) ===== -->
+    <section class="card">
+      <h2>Student Record</h2>
+
+      <div class="field">
+        <label for="attendance">Attendance <span class="hint">(%)</span></label>
+        <div class="row">
+          <input type="range" id="attendance" min="0" max="100" value="65">
+          <span class="value" id="attendance_val">65</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="fee_delay_days">Fee Delay <span class="hint">(days late)</span></label>
+        <div class="row">
+          <input type="range" id="fee_delay_days" min="0" max="120" value="30">
+          <span class="value" id="fee_delay_days_val">30</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="marks_avg">Average Marks <span class="hint">(out of 100)</span></label>
+        <div class="row">
+          <input type="range" id="marks_avg" min="0" max="100" value="60">
+          <span class="value" id="marks_avg_val">60</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="months_enrolled">Months Enrolled</label>
+        <div class="row">
+          <input type="range" id="months_enrolled" min="1" max="48" value="12">
+          <span class="value" id="months_enrolled_val">12</span>
+        </div>
+      </div>
+
+      <button id="checkBtn">Check Dropout Risk</button>
+    </section>
+
+    <!-- ===== RESULT ===== -->
+    <section class="card result hidden" id="resultCard">
+      <h2>Risk Report</h2>
+
+      <div class="risk-number">
+        <span id="riskValue">0</span><span class="outof">/100</span>
+      </div>
+
+      <div class="gauge">
+        <div class="gauge-fill" id="gaugeFill"></div>
+      </div>
+
+      <div class="level" id="riskLevel">—</div>
+      <p class="action" id="riskAction"></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="name">Muhammad Ikram</span>
+    <span class="tagline">Building AI, one concept at a time</span>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
